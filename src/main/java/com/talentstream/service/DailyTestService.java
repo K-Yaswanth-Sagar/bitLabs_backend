@@ -34,11 +34,11 @@ public class DailyTestService {
 	}
 	
 	
-	public List<ApplicantDailyTest> getRandomQuestions(int count) {
-        List<ApplicantDailyTest> all = dailyTestRepo.findAll();
-        Collections.shuffle(all);
-        return all.stream().limit(count).collect(Collectors.toList());
-    }
+//	public List<ApplicantDailyTest> getRandomQuestions(int count) {
+//        List<ApplicantDailyTest> all = dailyTestRepo.findAll();
+//        Collections.shuffle(all);
+//        return all.stream().limit(count).collect(Collectors.toList());
+//    }
 	
 	public List<ApplicantDailyTest> getRandomSkillQuestions(int count, List<String> skills){
 		List<ApplicantDailyTest> all = dailyTestRepo.findByLanguageIn(skills);

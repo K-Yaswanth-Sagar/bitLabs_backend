@@ -43,11 +43,11 @@ public class DailyTestController {
 
 	}
 
-	@GetMapping("/dailyQuestion")
-	public ResponseEntity<List<ApplicantDailyTest>> getDailyQuestions() {
-	    List<ApplicantDailyTest> questions = dailyTestService.getRandomQuestions(5);
-	    return ResponseEntity.ok(questions);
-	}
+//	@GetMapping("/dailyQuestion")
+//	public ResponseEntity<List<ApplicantDailyTest>> getDailyQuestions() {
+//	    List<ApplicantDailyTest> questions = dailyTestService.getRandomQuestions(5);
+//	    return ResponseEntity.ok(questions);
+//	}
 	
 	@PostMapping("/getSkillBasedQuestions")
 	public ResponseEntity<List<ApplicantDailyTest>> getQuestionsBySkills(@RequestBody List<String> skills){

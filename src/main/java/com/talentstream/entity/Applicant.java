@@ -8,7 +8,6 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -76,6 +75,19 @@ public class Applicant {
 	private LocalDateTime createdAt;
 	
 	
+	@OneToMany(mappedBy = "applicant", cascade = CascadeType.ALL)
+	@JsonIgnore
+	private List<ApplicantDailyTestResult> testResult;
+	
+	
+	public List<ApplicantDailyTestResult> getTestResult() {
+		return testResult;
+	}
+
+	public void setTestResult(List<ApplicantDailyTestResult> testResult) {
+		this.testResult = testResult;
+	}
+
 	public LocalDateTime getCreatedAt() {
 		return createdAt;
 	}
