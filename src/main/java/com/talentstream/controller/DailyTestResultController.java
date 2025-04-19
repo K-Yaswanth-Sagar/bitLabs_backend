@@ -33,8 +33,6 @@ public class DailyTestResultController {
 	@PostMapping("/submit")
     public ResponseEntity<String> submitTest(@RequestBody ApplicantDailyTestSubmitDto dto) {
 		try {
-			System.out.println(dto);
-			System.out.println("Dto"+dto.getApplicantId());
 			applicantDailyTestResultService.submitDailyTest(dto);
 	        return ResponseEntity.ok("Test submitted successfully");
 			
@@ -43,17 +41,15 @@ public class DailyTestResultController {
 			return new ResponseEntity<String>("Failed",HttpStatus.BAD_REQUEST);
 				
 		}
-		
-        
     }
 	
 	
-	@GetMapping("/summary/{userId}")
+	@GetMapping("/summary/{applicantId}")
     public ResponseEntity<List<ApplicantDailyTestSummaryDto>> getTestSummaries(@PathVariable Long applicantId) {
         return ResponseEntity.ok(applicantDailyTestResultService.getTestSummaries(applicantId));
     }
 	
-	@GetMapping("/testResult/{userId}")
+	@GetMapping("/testResult/{applicantId}")
     public ResponseEntity<List<ApplicantDailyTestResultDto>> getTestDetails(
             @PathVariable Long applicantId,
             @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {

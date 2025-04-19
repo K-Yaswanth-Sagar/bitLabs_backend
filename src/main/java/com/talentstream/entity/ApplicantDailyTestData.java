@@ -17,7 +17,7 @@ public class ApplicantDailyTestData {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private Byte questionNumber;
+	private int questionNumber;
 	private String question;
 	
 	@ElementCollection
@@ -38,11 +38,11 @@ public class ApplicantDailyTestData {
 		this.id = id;
 	}
 
-	public Byte getQuestionNumber() {
+	public int getQuestionNumber() {
 		return questionNumber;
 	}
 
-	public void setQuestionNumber(Byte questionNumber) {
+	public void setQuestionNumber(int questionNumber) {
 		this.questionNumber = questionNumber;
 	}
 

@@ -5,19 +5,19 @@ import java.util.List;
 
 public class ApplicantDailyTestResultDto {
 
-	private Byte questionNumber;
+	private int questionNumber;
 	private String question;
 	private List<String> options;
 	private String correctAnswer;
 	private String selectedAnswer;
 	
 
-	public Byte getQuestionNumber() {
+	public int getQuestionNumber() {
 		return questionNumber;
 	}
 
 
-	public void setQuestionNumber(Byte questionNumber) {
+	public void setQuestionNumber(int questionNumber) {
 		this.questionNumber = questionNumber;
 	}
 
